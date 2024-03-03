@@ -12,18 +12,20 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::redirect('/home', '/');
 Route::group(['middleware' => 'web'], function (){
     Route::get('/', function () {
         return view('home');
     })->name('home');
     
-    Route::get('/login', 'App\Http\Controllers\AuthController@showLoginForm')->name('login');
-    Route::post('/login', 'App\Http\Controllers\AuthController@login');
-    Route::get('/register', 'App\Http\Controllers\AuthController@showRegistrationForm')->name('register');
-    Route::post('/register', 'App\Http\Controllers\AuthController@register');
-    Route::post('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
+    Route::middleware('guest')->group(function() {
+        Route::get('/login', 'App\Http\Controllers\AuthController@showLoginForm')->name('login');
+        Route::post('/login', 'App\Http\Controllers\AuthController@login');
+        Route::get('/register', 'App\Http\Controllers\AuthController@showRegistrationForm')->name('register');
+        Route::post('/register', 'App\Http\Controllers\AuthController@register');
+    });
     
+    Route::post('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout')->middleware('auth');
     
     Route::middleware('auth')->prefix('contacts')->name('contacts.')->group(function () {
         Route::get('/', 'App\Http\Controllers\ContactController@index')->name('index')->withoutMiddleware('auth');
