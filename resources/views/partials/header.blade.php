@@ -20,7 +20,7 @@
                             <li><a class="dropdown-item" href="#" onclick="logout()">Log out</a></li>
                         </ul>
                     </li>
-                    <form id="logoutForm d-none" action="{{ route('logout') }}" method="POST">
+                    <form id="logoutForm" class="d-none" action="{{ route('logout') }}" method="POST">
                         @csrf
                     </form>
                 @else
@@ -38,6 +38,6 @@
 
 <script>
     function logout(){
-        document.getElementById("logoutForm").submit();
+        $("#logoutForm").submit();
     }
 </script>
