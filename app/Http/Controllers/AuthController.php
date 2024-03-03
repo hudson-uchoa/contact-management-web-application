@@ -20,7 +20,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         
         if(Auth::attempt($credentials)) {
-            return redirect()->intended('/home');
+            return redirect('/');
         } else {
             return redirect()->back()->withErrors(['email' => 'Invalid credentials']);
         }
@@ -43,7 +43,7 @@ class AuthController extends Controller
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => Hash::make($request->password),
+                'password' => $request->password,
             ]);
         
             return redirect()->route('login')->with('success', 'User registered successfully!');
@@ -58,6 +58,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect()->route('login');
     }
 }
