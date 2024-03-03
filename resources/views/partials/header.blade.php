@@ -17,7 +17,6 @@
                             {{ auth()->user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Edit</a></li>
                             <li><a class="dropdown-item" href="#" onclick="logout()">Log out</a></li>
                         </ul>
                     </li>

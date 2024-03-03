@@ -1,0 +1,202 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@9.6.6
+2 info using node@v18.18.2
+3 timing npm:load:whichnode Completed in 2ms
+4 timing config:load:defaults Completed in 3ms
+5 timing config:load:file:/usr/lib/node_modules/npm/npmrc Completed in 3ms
+6 timing config:load:builtin Completed in 4ms
+7 timing config:load:cli Completed in 3ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:project Completed in 2ms
+10 timing config:load:file:/var/www/html/.npmrc Completed in 1ms
+11 timing config:load:user Completed in 1ms
+12 timing config:load:file:/etc/npmrc Completed in 0ms
+13 timing config:load:global Completed in 0ms
+14 timing config:load:setEnvs Completed in 1ms
+15 timing config:load Completed in 16ms
+16 timing npm:load:configload Completed in 17ms
+17 timing npm:load:mkdirpcache Completed in 1ms
+18 timing npm:load:mkdirplogs Completed in 1ms
+19 verbose title npm i axios
+20 verbose argv "i" "axios"
+21 timing npm:load:setTitle Completed in 1ms
+22 timing config:load:flatten Completed in 7ms
+23 timing npm:load:display Completed in 9ms
+24 verbose logfile logs-max:10 dir:/var/www/html/.npm/_logs/2024-03-03T18_45_38_142Z-
+25 verbose logfile /var/www/html/.npm/_logs/2024-03-03T18_45_38_142Z-debug-0.log
+26 timing npm:load:logFile Completed in 25ms
+27 timing npm:load:timers Completed in 1ms
+28 timing npm:load:configScope Completed in 0ms
+29 timing npm:load Completed in 58ms
+30 timing arborist:ctor Completed in 1ms
+31 silly logfile done cleaning log files
+32 timing idealTree:init Completed in 103ms
+33 timing idealTree:userRequests Completed in 6ms
+34 silly idealTree buildDeps
+35 silly fetch manifest axios@^1.6.1
+36 timing arborist:ctor Completed in 0ms
+37 http fetch GET 200 https://registry.npmjs.org/axios 405ms (cache revalidated)
+38 silly placeDep ROOT axios@1.6.7 REPLACE for:  want: ^1.6.1
+39 timing idealTree:#root Completed in 426ms
+40 timing idealTree:node_modules/axios Completed in 0ms
+41 timing idealTree:buildDeps Completed in 428ms
+42 timing idealTree:fixDepFlags Completed in 0ms
+43 timing idealTree Completed in 542ms
+44 timing reify:loadTrees Completed in 543ms
+45 timing reify:diffTrees Completed in 7ms
+46 silly reify moves {}
+47 timing reify:retireShallow Completed in 1ms
+48 timing reify:createSparse Completed in 71ms
+49 timing reify:loadBundles Completed in 0ms
+50 silly audit bulk request {
+50 silly audit   '@esbuild/android-arm': [ '0.18.20' ],
+50 silly audit   '@esbuild/android-arm64': [ '0.18.20' ],
+50 silly audit   '@esbuild/android-x64': [ '0.18.20' ],
+50 silly audit   '@esbuild/darwin-arm64': [ '0.18.20' ],
+50 silly audit   '@esbuild/darwin-x64': [ '0.18.20' ],
+50 silly audit   '@esbuild/freebsd-arm64': [ '0.18.20' ],
+50 silly audit   '@esbuild/freebsd-x64': [ '0.18.20' ],
+50 silly audit   '@esbuild/linux-arm': [ '0.18.20' ],
+50 silly audit   '@esbuild/linux-arm64': [ '0.18.20' ],
+50 silly audit   '@esbuild/linux-ia32': [ '0.18.20' ],
+50 silly audit   '@esbuild/linux-loong64': [ '0.18.20' ],
+50 silly audit   '@esbuild/linux-mips64el': [ '0.18.20' ],
+50 silly audit   '@esbuild/linux-ppc64': [ '0.18.20' ],
+50 silly audit   '@esbuild/linux-riscv64': [ '0.18.20' ],
+50 silly audit   '@esbuild/linux-s390x': [ '0.18.20' ],
+50 silly audit   '@esbuild/linux-x64': [ '0.18.20' ],
+50 silly audit   '@esbuild/netbsd-x64': [ '0.18.20' ],
+50 silly audit   '@esbuild/openbsd-x64': [ '0.18.20' ],
+50 silly audit   '@esbuild/sunos-x64': [ '0.18.20' ],
+50 silly audit   '@esbuild/win32-arm64': [ '0.18.20' ],
+50 silly audit   '@esbuild/win32-ia32': [ '0.18.20' ],
+50 silly audit   '@esbuild/win32-x64': [ '0.18.20' ],
+50 silly audit   '@popperjs/core': [ '2.11.8' ],
+50 silly audit   asynckit: [ '0.4.0' ],
+50 silly audit   bootstrap: [ '5.3.3' ],
+50 silly audit   'combined-stream': [ '1.0.8' ],
+50 silly audit   'delayed-stream': [ '1.0.0' ],
+50 silly audit   esbuild: [ '0.18.20' ],
+50 silly audit   'follow-redirects': [ '1.15.5' ],
+50 silly audit   'form-data': [ '4.0.0' ],
+50 silly audit   fsevents: [ '2.3.3' ],
+50 silly audit   'laravel-vite-plugin': [ '0.8.1' ],
+50 silly audit   'mime-db': [ '1.52.0' ],
+50 silly audit   'mime-types': [ '2.1.35' ],
+50 silly audit   nanoid: [ '3.3.7' ],
+50 silly audit   picocolors: [ '1.0.0' ],
+50 silly audit   picomatch: [ '2.3.1' ],
+50 silly audit   postcss: [ '8.4.35' ],
+50 silly audit   'proxy-from-env': [ '1.1.0' ],
+50 silly audit   rollup: [ '3.29.4' ],
+50 silly audit   'source-map-js': [ '1.0.2' ],
+50 silly audit   vite: [ '4.5.2' ],
+50 silly audit   'vite-plugin-full-reload': [ '1.1.0' ],
+50 silly audit   axios: [ '1.6.7' ]
+50 silly audit }
+51 verbose reify failed optional dependency /var/www/html/node_modules/fsevents
+52 silly reify mark deleted [ '/var/www/html/node_modules/fsevents' ]
+53 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/win32-x64
+54 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/win32-x64' ]
+55 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/win32-ia32
+56 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/win32-ia32' ]
+57 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/win32-arm64
+58 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/win32-arm64' ]
+59 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/sunos-x64
+60 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/sunos-x64' ]
+61 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/openbsd-x64
+62 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/openbsd-x64' ]
+63 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/netbsd-x64
+64 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/netbsd-x64' ]
+65 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/linux-s390x
+66 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/linux-s390x' ]
+67 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/linux-riscv64
+68 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/linux-riscv64' ]
+69 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/linux-ppc64
+70 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/linux-ppc64' ]
+71 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/linux-mips64el
+72 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/linux-mips64el' ]
+73 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/linux-loong64
+74 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/linux-loong64' ]
+75 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/linux-ia32
+76 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/linux-ia32' ]
+77 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/linux-arm64
+78 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/linux-arm64' ]
+79 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/linux-arm
+80 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/linux-arm' ]
+81 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/freebsd-x64
+82 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/freebsd-x64' ]
+83 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/freebsd-arm64
+84 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/freebsd-arm64' ]
+85 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/darwin-x64
+86 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/darwin-x64' ]
+87 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/darwin-arm64
+88 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/darwin-arm64' ]
+89 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/android-x64
+90 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/android-x64' ]
+91 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/android-arm64
+92 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/android-arm64' ]
+93 verbose reify failed optional dependency /var/www/html/node_modules/@esbuild/android-arm
+94 silly reify mark deleted [ '/var/www/html/node_modules/@esbuild/android-arm' ]
+95 timing reifyNode:node_modules/fsevents Completed in 12ms
+96 timing reifyNode:node_modules/@esbuild/win32-x64 Completed in 11ms
+97 timing reifyNode:node_modules/@esbuild/win32-ia32 Completed in 12ms
+98 timing reifyNode:node_modules/@esbuild/win32-arm64 Completed in 12ms
+99 timing reifyNode:node_modules/@esbuild/sunos-x64 Completed in 12ms
+100 timing reifyNode:node_modules/@esbuild/openbsd-x64 Completed in 12ms
+101 timing reifyNode:node_modules/@esbuild/netbsd-x64 Completed in 12ms
+102 timing reifyNode:node_modules/@esbuild/linux-s390x Completed in 11ms
+103 timing reifyNode:node_modules/@esbuild/linux-riscv64 Completed in 11ms
+104 timing reifyNode:node_modules/@esbuild/linux-ppc64 Completed in 11ms
+105 timing reifyNode:node_modules/@esbuild/linux-mips64el Completed in 12ms
+106 timing reifyNode:node_modules/@esbuild/linux-loong64 Completed in 12ms
+107 timing reifyNode:node_modules/@esbuild/linux-ia32 Completed in 12ms
+108 timing reifyNode:node_modules/@esbuild/linux-arm64 Completed in 12ms
+109 timing reifyNode:node_modules/@esbuild/linux-arm Completed in 12ms
+110 timing reifyNode:node_modules/@esbuild/freebsd-x64 Completed in 11ms
+111 timing reifyNode:node_modules/@esbuild/freebsd-arm64 Completed in 11ms
+112 timing reifyNode:node_modules/@esbuild/darwin-x64 Completed in 11ms
+113 timing reifyNode:node_modules/@esbuild/darwin-arm64 Completed in 11ms
+114 timing reifyNode:node_modules/@esbuild/android-x64 Completed in 12ms
+115 timing reifyNode:node_modules/@esbuild/android-arm64 Completed in 12ms
+116 timing reifyNode:node_modules/@esbuild/android-arm Completed in 12ms
+117 timing reify:unpack Completed in 15ms
+118 timing reify:unretire Completed in 0ms
+119 timing build:queue Completed in 9ms
+120 timing build:deps Completed in 10ms
+121 timing build Completed in 10ms
+122 timing reify:build Completed in 11ms
+123 timing reify:trash Completed in 40ms
+124 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 134ms
+125 timing auditReport:getReport Completed in 139ms
+126 silly audit report {}
+127 timing auditReport:init Completed in 0ms
+128 timing reify:audit Completed in 139ms
+129 timing reify:save Completed in 65ms
+130 timing reify Completed in 790ms
+131 silly ADD
+132 silly ADD
+133 silly ADD
+134 silly ADD
+135 silly ADD
+136 silly ADD
+137 silly ADD
+138 silly ADD
+139 silly ADD
+140 silly ADD
+141 silly ADD
+142 silly ADD
+143 silly ADD
+144 silly ADD
+145 silly ADD
+146 silly ADD
+147 silly ADD
+148 silly ADD
+149 silly ADD
+150 silly ADD
+151 silly ADD
+152 silly ADD
+153 timing command:i Completed in 805ms
+154 verbose exit 0
+155 timing npm Completed in 1572ms
+156 info ok
