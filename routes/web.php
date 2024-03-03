@@ -15,6 +15,10 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::group(['middleware' => 'web'], function (){
+    Route::get('/', function () {
+        return view('home');
+    })->name('home');
+    
     Route::get('/login', 'App\Http\Controllers\AuthController@showLoginForm')->name('login');
     
     Route::post('/login', 'App\Http\Controllers\AuthController@login');
@@ -22,8 +26,4 @@ Route::group(['middleware' => 'web'], function (){
     Route::get('/register', 'App\Http\Controllers\AuthController@showRegistrationForm')->name('register');
     
     Route::post('/register', 'App\Http\Controllers\AuthController@register');
-});
-
-Route::get('/', function () {
-    return view('welcome');
 });
