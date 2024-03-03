@@ -15,14 +15,12 @@
                     </div>
                     <div class="card-footer">
                         <a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-primary">Edit</a>
-                        <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" style="display: inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this contact?')">Delete</button>
-                        </form>
+                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Delete</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+@include('contacts.modal.confirmation')

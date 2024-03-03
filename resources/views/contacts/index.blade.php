@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <table class="table table-striped">
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -26,22 +26,21 @@
                     </thead>
                     <tbody>
                         @foreach ($contacts as $contact)
-                            <tr>
+                            <tr class="table-row">
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ $contact->contact }}</td>
                                 <td>{{ $contact->email }}</td>
                                 @auth
                                     <td>
+                                        <a href="{{ route('contacts.show', $contact->id) }}" class="btn btn-info btn-sm me-2">
+                                            <i class="bi bi-pencil-square"></i> Info
+                                        </a>
                                         <a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-primary btn-sm me-2">
                                             <i class="bi bi-pencil-square"></i> Edit
                                         </a>
-                                        <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">
-                                                <i class="bi bi-trash"></i> Delete
-                                            </button>
-                                        </form>
+                                        <a href="#" onclick="confirmDelete({{ $contact->id }})" class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </a>
                                     </td>
                                 @endauth
                             </tr>
@@ -52,3 +51,15 @@
         </div>
     </div>
 @endsection
+
+@include('contacts.modal.confirmation')
+
+<script>
+    function confirmDelete(contact_id){
+        const deleteContactForm = $('#deleteContactForm');
+        const url = "{{ route('contacts.destroy', ':contactId') }}".replace(':contactId', contact_id);
+        deleteContactForm.attr('action', url);
+        console.log(deleteContactForm.action);
+        $('#confirmDeleteModal').modal('show');    
+    }
+</script>

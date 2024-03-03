@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "{{isset($contact) ? 'Edit' : 'Create'}} Contact")
+@section('title', isset($contact) ? 'Edit Contact' : 'Create Contact')
 
 @section('content')
     <div class="container mt-5">
@@ -9,10 +9,10 @@
                 <div class="card">
                     <div class="card-header">{{isset($contact) ? 'Edit' : 'Create'}} Contact</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ isset($contact) ? route('contacts.update') : route('contacts.store') }}">
+                        <form method="POST" action="{{ isset($contact) ? route('contacts.update', $contact->id) : route('contacts.store') }}">
                             @csrf
                             @if(isset($contact))
-                                $method('PUT')
+                                @method('PUT')
                             @endif
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
@@ -30,12 +30,12 @@
                             </div>
                             <div class="mb-3">
                                 <label for="contact" class="form-label">Phone</label>
-                                <input type="text" class="form-control @error('contact') is-invalid @enderror" id="contact" name="contact" value="{{ old('contact', $contact->contact ?? '') }}" required>
+                                <input type="text" class="form-control @error('contact') is-invalid @enderror" id="contact" name="contact" value="{{ old('contact', $contact->contact ?? '') }}" required minlength="9" maxlength="9">
                                 @error('contact')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary">{{isset($contact) ? 'Edit' : 'Create'}}</button>
+                            <button type="submit" class="btn btn-primary">{{isset($contact) ? 'Save' : 'Create'}}</button>
                         </form>
                     </div>
                 </div>
