@@ -6,6 +6,11 @@
      <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
