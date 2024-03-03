@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -30,7 +33,26 @@ class AuthController extends Controller
     
     public function register (Request $request)
     {
-        //Lógica de registro de usuário
+        try{
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:8|confirmed',
+            ]);
+        
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+        
+            return redirect()->route('login')->with('success', 'User registered successfully!');
+        }catch (ValidationException $e){
+            return redirect()->back()->withErrors($e->validator->getMessageBag())->withInput();
+        }catch (\Exception $e) {
+            return redirect()->back()->withErrors($e->getMessage());
+        }
+
     }
     
     public function logout()
