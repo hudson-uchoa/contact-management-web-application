@@ -30,7 +30,7 @@ class ContactController extends Controller
         try{
             $request->validate([
                 'name' => 'required|string|min:5',
-                'contact' => 'required|numeric|digits:9',
+                'contact' => 'required|numeric|digits:9|unique:contacts',
                 'email' => 'required|email|unique:contacts',
             ]);
     
@@ -51,13 +51,35 @@ class ContactController extends Controller
     
     public function update(Request $request, Contact $contact)
     {
-        //Lógica de atualizar
+        try{
+            $request->validate([
+                'name' => 'required|string|min:5',
+                'contact' => [
+                    'required',
+                    'numeric',
+                    'digits:9',
+                    'unique:contacts,contact' . ($contact->contact != $request->get('contact') ? '' : ',' . $contact->id),
+                ],
+                'email' => [
+                    'required',
+                    'email',
+                    'unique:contacts,email' . ($contact->email != $request->get('email') ? '' : ',' . $contact->id),
+                ],
+            ]);
+    
+            $contact->update($request->all());
+    
+            return redirect()->route('contacts.show', $contact->id)->with('success', 'Contact edited successfully!');
+        }catch(ValidationException $e){
+            return back()->withErrors($e->validator->getMessageBag())->withInput();
+        }catch(\Exception $e){
+            return back()->withErrors($e->getMessage());
+        }
     }
     
     public function destroy(Contact $contact)
     {
         $contact->delete();
-        $contacts = Contact::all();
-        return view('contacts.index', compact('contacts'));
+        return redirect('contacts');
     }
 }
