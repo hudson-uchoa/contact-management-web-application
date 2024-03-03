@@ -18,9 +18,12 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Edit</a></li>
-                            <li><a class="dropdown-item" href="{{route('logout')}}">Log out</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">Log out</a></li>
                         </ul>
                     </li>
+                    <form id="logoutForm d-none" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                    </form>
                 @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('login')}}">Login</a>
@@ -33,3 +36,9 @@
         </div>
     </div>
 </nav>
+
+<script>
+    function logout(){
+        document.getElementById("logoutForm").submit();
+    }
+</script>
