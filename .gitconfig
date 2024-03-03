@@ -1,3 +1,5 @@
 [user]
 	name = hudson-uchoa
 	email = uchoa.hudson1@gmail.com
+[credential]
+	helper = cache
